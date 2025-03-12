@@ -40,12 +40,20 @@ const Flashcard = () => {
   const addFlashcard = (newFlashcard) => {
     setFlashcard([...flashcard, { id: flashcard.length + 1, ...newFlashcard }]);
   };
+  //Function for shuffle button
+  const handleShuffle = () => {
+    const shuffledFlashcards = [...flashcard].sort(() => Math.random() - 0.5);
+    setFlashcard(shuffledFlashcards);
+  };
   return (
     <>
       <h1>Flashcard</h1>
       <div className="form-section">
         <Form addFlashcard={addFlashcard} />
       </div>
+      <button className="btn-shuffle" onClick={handleShuffle}>
+        Shuffle
+      </button>
       <div
         className={`card ${flip ? "flip" : ""}`}
         onClick={() => setFlip(!flip)}
