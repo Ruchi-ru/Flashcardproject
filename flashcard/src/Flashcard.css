@@ -1,0 +1,46 @@
+body {
+  background-color: rgb(168, 181, 190);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  text-align: center;
+  background-color: rgb(103, 144, 177);
+  box-shadow: 0 4px 8px 0 rgba(79, 59, 59, 0.2);
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: rotateY(var(--rotate-y, 0));
+  transform-style: preserve-3d;
+  transition: 150ms;
+}
+.card.flip {
+  --rotate-y: 180deg;
+}
+.counter {
+  text-align: center;
+  color: rgb(81, 77, 77);
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+.button-container button {
+  background-color: rgb(255, 255, 255);
+  border-color: aliceblue;
+  padding: 7px;
+  border-radius: 5px;
+}
+.front,
+.back {
+  backface-visibility: hidden;
+}
+.back {
+  transform: rotateY(180deg);
+}
+.form-section {
+  margin-bottom: 10px;
+}
