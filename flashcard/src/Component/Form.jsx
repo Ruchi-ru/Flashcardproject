@@ -10,6 +10,7 @@ const Form = ({ addFlashcard }) => {
   const handlesubmit = (e) => {
     e.preventDefault();
     console.log("clicked");
+    if (!question || !answer) return;
     axios
       .post("https://67d0562b825945773eb084a9.mockapi.io/flashcard", {
         question: question,
@@ -22,7 +23,6 @@ const Form = ({ addFlashcard }) => {
         setQuestion("");
         setAnswer("");
       })
-      .catch((error) => console.error("Error adding flashcard:", error));
   };
   return (
     <>

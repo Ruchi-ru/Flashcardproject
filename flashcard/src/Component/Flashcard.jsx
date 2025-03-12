@@ -3,8 +3,6 @@ import "../Flashcard.css";
 import Form from "./Form";
 import axios from "axios";
 const Flashcard = () => {
-  //storing data
-  const [data, setData] = useState([]);
   //api calling for displaying data
   function getData() {
     axios
