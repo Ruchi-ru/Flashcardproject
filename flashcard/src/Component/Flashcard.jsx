@@ -56,8 +56,14 @@ const Flashcard = () => {
         className={`card ${flip ? "flip" : ""}`}
         onClick={() => setFlip(!flip)}
       >
-        <div className="front">{flashcard[currentpage].question}</div>
-        <div className="back">{flashcard[currentpage].answer}</div>
+        {flashcard.length > 0 && flashcard[currentpage] ? (
+          <>
+            <div className="front">{flashcard[currentpage].question}</div>
+            <div className="back">{flashcard[currentpage].answer}</div>
+          </>
+        ) : (
+          <p>No flashcards added</p>
+        )}
       </div>
       <p className="counter">
         {currentpage + 1} of {flashcard.length}

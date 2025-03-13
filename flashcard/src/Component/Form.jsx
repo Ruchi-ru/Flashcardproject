@@ -10,7 +10,9 @@ const Form = ({ addFlashcard }) => {
   const handlesubmit = (e) => {
     e.preventDefault();
     console.log("clicked");
-    if (!question || !answer) return;
+    if (question === "" || answer === "") {
+      return;
+    }
     axios
       .post("https://67d0562b825945773eb084a9.mockapi.io/flashcard", {
         question: question,
@@ -23,6 +25,7 @@ const Form = ({ addFlashcard }) => {
         setQuestion("");
         setAnswer("");
       })
+      .catch((error) => console.error("Error adding flashcard:", error));
   };
   return (
     <>
@@ -32,6 +35,7 @@ const Form = ({ addFlashcard }) => {
           placeholder="Enter the question"
           type="text"
           id="question"
+          value={question}
           onChange={(e) => setQuestion(e.target.value)}
         ></input>
         <br></br>
@@ -40,6 +44,7 @@ const Form = ({ addFlashcard }) => {
           placeholder="Enter the answer"
           type="text"
           id="answer"
+          value={answer}
           onChange={(e) => setAnswer(e.target.value)}
         ></input>
         <br></br>
