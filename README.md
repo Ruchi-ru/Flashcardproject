@@ -1,6 +1,6 @@
 Installation:
 clone repository: git clone https://github.com/Ruchi-ru/Flashcardproject.git
-navigate to rpoject file: cd Flashcardproject
+navigate to project file: cd Flashcardproject
 install dependencies: npm install
 Running the Application: npm run dev
 How the app works:
