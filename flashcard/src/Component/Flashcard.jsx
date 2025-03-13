@@ -27,11 +27,13 @@ const Flashcard = () => {
   //function for previous button
   const handleprev = () => {
     setCurrentpage(currentpage - 1);
+    setFlip(false);
   };
 
   //function for next button
   const handlenext = () => {
     setCurrentpage(currentpage + 1);
+    setFlip(false);
   };
 
   // Function to add a new flashcard
